@@ -24,7 +24,6 @@ html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   background:var(--bg); color:var(--tinta); line-height:1.5; -webkit-font-smoothing:antialiased;}
 
-/* ===== HERO ===== */
 .hero{position:relative; overflow:hidden;
   background:linear-gradient(135deg,var(--verde) 0%,var(--verde-esc) 45%,var(--azul) 100%);
   color:#fff; padding:0;}
@@ -38,7 +37,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
 .hero-text{position:relative; z-index:2}
 .eyebrow{display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.16);
   border:1px solid rgba(255,255,255,.3); padding:6px 14px; border-radius:999px;
-  font-size:.8rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; backdrop-filter:blur(4px);}
+  font-size:.8rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;}
 .hero h1{font-size:clamp(2.1rem,5vw,3.4rem); line-height:1.05; margin:18px 0 6px; font-weight:900; letter-spacing:-.02em}
 .hero h1 .nome{color:var(--amarelo); text-shadow:0 2px 12px rgba(0,0,0,.25)}
 .hero .sub{font-size:clamp(1rem,2.4vw,1.25rem); opacity:.95; max-width:46ch; font-weight:500}
@@ -46,8 +45,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
 .chip{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25);
   padding:8px 14px; border-radius:12px; font-weight:700; font-size:.92rem; display:flex; gap:8px; align-items:center}
 .chip b{color:var(--amarelo); font-size:1.05rem}
-
-/* foto */
 .hero-photo{position:relative; z-index:2; justify-self:center}
 .photo-frame{position:relative; width:min(340px,80vw); aspect-ratio:1/1; border-radius:24px;
   overflow:hidden; border:5px solid var(--amarelo); box-shadow:0 18px 50px rgba(0,0,0,.35);
@@ -64,9 +61,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
 .flag-line i{flex:1}
 .flag-line .g{background:var(--verde)} .flag-line .y{background:var(--amarelo)} .flag-line .b{background:var(--azul)}
 
-/* ===== TOOLBAR ===== */
 .wrap{max-width:1100px; margin:0 auto; padding:0 24px}
-.toolbar{position:sticky; top:0; z-index:20; background:rgba(244,247,251,.92); backdrop-filter:blur(10px);
+.toolbar{position:sticky; top:0; z-index:20; background:rgba(244,247,251,.92); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
   border-bottom:1px solid var(--linha); padding:14px 0; margin-top:-1px}
 .toolbar .row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
 .search{flex:1; min-width:200px; position:relative}
@@ -94,13 +90,11 @@ select.filtro{padding:11px 14px; border:1px solid var(--linha); border-radius:12
 .qchip.active{background:var(--azul); color:#fff; border-color:var(--azul)}
 .qchip.bra.active{background:var(--verde); border-color:var(--verde)}
 
-/* ===== DAY GROUPS ===== */
 .day{margin:26px 0 6px}
 .day h2{font-size:1.05rem; color:var(--azul); font-weight:800; display:flex; align-items:center; gap:10px;
   padding-bottom:8px; border-bottom:2px solid var(--linha)}
 .day h2 .cnt{margin-left:auto; font-size:.78rem; font-weight:700; color:var(--cinza); background:#eef2f8; padding:3px 10px; border-radius:999px}
 
-/* ===== MATCH CARD ===== */
 .matches{display:flex; flex-direction:column; gap:12px; margin-top:14px}
 .match{background:var(--card); border-radius:var(--raio); box-shadow:var(--sombra-sm); border:1px solid var(--linha);
   padding:14px 16px; display:grid; grid-template-columns:84px 1fr 150px; gap:14px; align-items:center;
@@ -119,6 +113,11 @@ select.filtro{padding:11px 14px; border:1px solid var(--linha); border-radius:12
 .team.a{justify-content:flex-start; text-align:left}
 .team .fl{font-size:1.5rem; line-height:1; flex-shrink:0}
 .team .nm{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.teaminp{width:118px; max-width:40vw; padding:8px 10px; border:1px dashed var(--azul); border-radius:10px;
+  font-weight:800; font-size:.98rem; background:#f4f8ff; color:var(--azul); outline:none; font-family:inherit}
+.teaminp::placeholder{color:#9fb0d0; font-weight:600}
+.teaminp:focus{border-style:solid; background:#fff}
+.team.h .teaminp{text-align:right} .team.a .teaminp{text-align:left}
 .scorebox{display:flex; align-items:center; gap:6px; flex-shrink:0}
 .scorebox input{width:46px; height:46px; text-align:center; font-size:1.3rem; font-weight:900; border:2px solid var(--linha);
   border-radius:12px; background:#fbfdff; outline:none; color:var(--azul)}
@@ -129,7 +128,6 @@ select.filtro{padding:11px 14px; border:1px solid var(--linha); border-radius:12
 .notecell textarea{width:100%; resize:vertical; min-height:46px; max-height:120px; padding:8px 10px;
   border:1px solid var(--linha); border-radius:10px; font-size:.85rem; font-family:inherit; outline:none; background:#fbfdff}
 .notecell textarea:focus{border-color:var(--verde); background:#fff}
-.notecell .placar-mini{font-size:.72rem; color:var(--cinza); font-weight:700}
 
 .empty{text-align:center; padding:60px 20px; color:var(--cinza)}
 .empty .big{font-size:3rem; margin-bottom:10px}
@@ -144,11 +142,11 @@ footer b{color:var(--verde-esc)}
 
 @media(max-width:780px){
   body{font-size:17px}
+  .toolbar{position:static; top:auto; z-index:1; -webkit-backdrop-filter:none; backdrop-filter:none; background:var(--card); box-shadow:0 2px 10px rgba(1,33,105,.06); margin-top:0; padding:12px 0}
   .hero-inner{grid-template-columns:1fr; text-align:center; padding:28px 18px 34px; gap:20px}
   .hero-photo{order:-1}
   .photo-frame{width:min(250px,66vw)}
   .hero .badges{justify-content:center}
-  .toolbar{padding:12px 0}
   .toolbar .row{gap:8px}
   .search{flex:1 1 100%}
   select.filtro{flex:1 1 100%; padding:13px 14px}
@@ -158,6 +156,7 @@ footer b{color:var(--verde-esc)}
   .team{font-size:1.05rem}
   .team .nm{white-space:normal}
   .team .fl{font-size:1.7rem}
+  .teaminp{max-width:60vw; width:160px; font-size:1.05rem}
   .teams{gap:10px}
   .scorebox{gap:10px}
   .scorebox input{width:58px; height:58px; font-size:1.6rem; border-width:2px}
@@ -194,8 +193,7 @@ footer b{color:var(--verde-esc)}
              onerror="this.style.display='none';document.getElementById('fb').style.display='flex'">
         <div class="photo-fallback" id="fb" style="display:none">
           <div class="big">📸🇧🇷</div>
-          <div><b>Coloque a foto do Seu Margarido aqui</b></div>
-          <small>Salve a foto como<br><b>assets/seu-margarido.jpg</b><br>na pasta do site</small>
+          <div><b>Foto do Seu Margarido</b></div>
         </div>
         <div class="photo-cap">Seu Margarido · Torcedor nº 1 🟢🟡</div>
       </div>
@@ -244,11 +242,16 @@ footer b{color:var(--verde-esc)}
 </footer>
 
 <script>
-const DB = {"teams": {"MEX": {"name": "México", "flag": "🇲🇽"}, "RSA": {"name": "África do Sul", "flag": "🇿🇦"}, "KOR": {"name": "Coreia do Sul", "flag": "🇰🇷"}, "CAN": {"name": "Canadá", "flag": "🇨🇦"}, "USA": {"name": "Estados Unidos", "flag": "🇺🇸"}, "PAR": {"name": "Paraguai", "flag": "🇵🇾"}, "QAT": {"name": "Catar", "flag": "🇶🇦"}, "SUI": {"name": "Suíça", "flag": "🇨🇭"}, "BRA": {"name": "Brasil", "flag": "🇧🇷"}, "MAR": {"name": "Marrocos", "flag": "🇲🇦"}, "HAI": {"name": "Haiti", "flag": "🇭🇹"}, "SCO": {"name": "Escócia", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"}, "AUS": {"name": "Austrália", "flag": "🇦🇺"}, "GER": {"name": "Alemanha", "flag": "🇩🇪"}, "CUW": {"name": "Curaçao", "flag": "🇨🇼"}, "NED": {"name": "Holanda", "flag": "🇳🇱"}, "JPN": {"name": "Japão", "flag": "🇯🇵"}, "CIV": {"name": "Costa do Marfim", "flag": "🇨🇮"}, "ECU": {"name": "Equador", "flag": "🇪🇨"}, "TUN": {"name": "Tunísia", "flag": "🇹🇳"}, "ESP": {"name": "Espanha", "flag": "🇪🇸"}, "CPV": {"name": "Cabo Verde", "flag": "🇨🇻"}, "BEL": {"name": "Bélgica", "flag": "🇧🇪"}, "EGY": {"name": "Egito", "flag": "🇪🇬"}, "KSA": {"name": "Arábia Saudita", "flag": "🇸🇦"}, "URU": {"name": "Uruguai", "flag": "🇺🇾"}, "IRN": {"name": "Irã", "flag": "🇮🇷"}, "NZL": {"name": "Nova Zelândia", "flag": "🇳🇿"}, "FRA": {"name": "França", "flag": "🇫🇷"}, "SEN": {"name": "Senegal", "flag": "🇸🇳"}, "NOR": {"name": "Noruega", "flag": "🇳🇴"}, "ARG": {"name": "Argentina", "flag": "🇦🇷"}, "ALG": {"name": "Argélia", "flag": "🇩🇿"}, "AUT": {"name": "Áustria", "flag": "🇦🇹"}, "JOR": {"name": "Jordânia", "flag": "🇯🇴"}, "POR": {"name": "Portugal", "flag": "🇵🇹"}, "ENG": {"name": "Inglaterra", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"}, "CRO": {"name": "Croácia", "flag": "🇭🇷"}, "GHA": {"name": "Gana", "flag": "🇬🇭"}, "PAN": {"name": "Panamá", "flag": "🇵🇦"}, "UZB": {"name": "Uzbequistão", "flag": "🇺🇿"}, "COL": {"name": "Colômbia", "flag": "🇨🇴"}, "TBD": {"name": "A definir", "flag": "⚽"}}, "matches": [{"id": 1, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-11T21:00:00Z", "home": "MEX", "away": "RSA", "city": "Cidade do México"}, {"id": 2, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-12T04:00:00Z", "home": "KOR", "away": "TBD", "city": "Guadalajara"}, {"id": 3, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-12T20:00:00Z", "home": "CAN", "away": "TBD", "city": "Toronto"}, {"id": 4, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-13T05:00:00Z", "home": "USA", "away": "PAR", "city": "Los Angeles"}, {"id": 5, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-13T23:00:00Z", "home": "QAT", "away": "SUI", "city": "São Francisco"}, {"id": 6, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-13T23:00:00Z", "home": "BRA", "away": "MAR", "city": "Nova Jersey"}, {"id": 7, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-14T02:00:00Z", "home": "HAI", "away": "SCO", "city": "Boston"}, {"id": 8, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-14T08:00:00Z", "home": "AUS", "away": "TBD", "city": "Vancouver"}, {"id": 9, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-14T19:00:00Z", "home": "GER", "away": "CUW", "city": "Houston"}, {"id": 10, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-14T22:00:00Z", "home": "NED", "away": "JPN", "city": "Dallas"}, {"id": 11, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-15T00:00:00Z", "home": "CIV", "away": "ECU", "city": "Filadélfia"}, {"id": 12, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-15T04:00:00Z", "home": "TBD", "away": "TUN", "city": "Monterrey"}, {"id": 13, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-15T17:00:00Z", "home": "ESP", "away": "CPV", "city": "Atlanta"}, {"id": 14, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-15T23:00:00Z", "home": "BEL", "away": "EGY", "city": "Vancouver"}, {"id": 15, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-15T23:00:00Z", "home": "KSA", "away": "URU", "city": "Miami"}, {"id": 16, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-16T05:00:00Z", "home": "IRN", "away": "NZL", "city": "Los Angeles"}, {"id": 17, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-16T20:00:00Z", "home": "FRA", "away": "SEN", "city": "Nova Jersey"}, {"id": 18, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-16T23:00:00Z", "home": "TBD", "away": "NOR", "city": "Boston"}, {"id": 19, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-17T03:00:00Z", "home": "ARG", "away": "ALG", "city": "Kansas City"}, {"id": 20, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-17T08:00:00Z", "home": "AUT", "away": "JOR", "city": "São Francisco"}, {"id": 21, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-17T19:00:00Z", "home": "POR", "away": "TBD", "city": "Houston"}, {"id": 22, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-17T22:00:00Z", "home": "ENG", "away": "CRO", "city": "Dallas"}, {"id": 23, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-18T00:00:00Z", "home": "GHA", "away": "PAN", "city": "Toronto"}, {"id": 24, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-18T04:00:00Z", "home": "UZB", "away": "COL", "city": "Cidade do México"}, {"id": 25, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-18T17:00:00Z", "home": "TBD", "away": "RSA", "city": "Atlanta"}, {"id": 26, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-18T23:00:00Z", "home": "SUI", "away": "TBD", "city": "Los Angeles"}, {"id": 27, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-19T02:00:00Z", "home": "CAN", "away": "QAT", "city": "Vancouver"}, {"id": 28, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-19T03:00:00Z", "home": "MEX", "away": "KOR", "city": "Guadalajara"}, {"id": 29, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-19T23:00:00Z", "home": "USA", "away": "AUS", "city": "Seattle"}, {"id": 30, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-19T23:00:00Z", "home": "SCO", "away": "MAR", "city": "Boston"}, {"id": 31, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-20T02:00:00Z", "home": "BRA", "away": "HAI", "city": "Filadélfia"}, {"id": 32, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-20T08:00:00Z", "home": "TBD", "away": "PAR", "city": "São Francisco"}, {"id": 33, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-20T19:00:00Z", "home": "NED", "away": "TBD", "city": "Houston"}, {"id": 34, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-20T21:00:00Z", "home": "GER", "away": "CIV", "city": "Toronto"}, {"id": 35, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-21T04:00:00Z", "home": "ECU", "away": "CUW", "city": "Kansas City"}, {"id": 36, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-21T06:00:00Z", "home": "TUN", "away": "JPN", "city": "Monterrey"}, {"id": 37, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-21T17:00:00Z", "home": "ESP", "away": "KSA", "city": "Atlanta"}, {"id": 38, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-21T23:00:00Z", "home": "BEL", "away": "IRN", "city": "Los Angeles"}, {"id": 39, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-21T23:00:00Z", "home": "URU", "away": "CPV", "city": "Miami"}, {"id": 40, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-22T05:00:00Z", "home": "NZL", "away": "EGY", "city": "Vancouver"}, {"id": 41, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-22T19:00:00Z", "home": "ARG", "away": "AUT", "city": "Dallas"}, {"id": 42, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-22T22:00:00Z", "home": "FRA", "away": "TBD", "city": "Filadélfia"}, {"id": 43, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-23T01:00:00Z", "home": "NOR", "away": "SEN", "city": "Nova Jersey"}, {"id": 44, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-23T07:00:00Z", "home": "JOR", "away": "ALG", "city": "São Francisco"}, {"id": 45, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-23T19:00:00Z", "home": "POR", "away": "UZB", "city": "Houston"}, {"id": 46, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-23T21:00:00Z", "home": "ENG", "away": "GHA", "city": "Boston"}, {"id": 47, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-24T00:00:00Z", "home": "PAN", "away": "CRO", "city": "Toronto"}, {"id": 48, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-24T04:00:00Z", "home": "COL", "away": "TBD", "city": "Guadalajara"}, {"id": 49, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-24T23:00:00Z", "home": "SUI", "away": "CAN", "city": "Vancouver"}, {"id": 50, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-24T23:00:00Z", "home": "TBD", "away": "QAT", "city": "Seattle"}, {"id": 51, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-24T23:00:00Z", "home": "SCO", "away": "BRA", "city": "Miami"}, {"id": 52, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-24T23:00:00Z", "home": "MAR", "away": "HAI", "city": "Atlanta"}, {"id": 53, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-25T03:00:00Z", "home": "TBD", "away": "MEX", "city": "Cidade do México"}, {"id": 54, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-25T03:00:00Z", "home": "RSA", "away": "KOR", "city": "Monterrey"}, {"id": 55, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-25T21:00:00Z", "home": "ECU", "away": "GER", "city": "Nova Jersey"}, {"id": 56, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-25T21:00:00Z", "home": "CUW", "away": "CIV", "city": "Filadélfia"}, {"id": 57, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-26T01:00:00Z", "home": "JPN", "away": "TBD", "city": "Dallas"}, {"id": 58, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-26T01:00:00Z", "home": "TUN", "away": "NED", "city": "Kansas City"}, {"id": 59, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-26T06:00:00Z", "home": "TBD", "away": "USA", "city": "Los Angeles"}, {"id": 60, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-26T06:00:00Z", "home": "PAR", "away": "AUS", "city": "São Francisco"}, {"id": 61, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-26T20:00:00Z", "home": "NOR", "away": "FRA", "city": "Boston"}, {"id": 62, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-26T20:00:00Z", "home": "SEN", "away": "TBD", "city": "Toronto"}, {"id": 63, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-27T02:00:00Z", "home": "CPV", "away": "KSA", "city": "Houston"}, {"id": 64, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-27T02:00:00Z", "home": "URU", "away": "ESP", "city": "Guadalajara"}, {"id": 65, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-27T07:00:00Z", "home": "EGY", "away": "IRN", "city": "Seattle"}, {"id": 66, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-27T07:00:00Z", "home": "NZL", "away": "BEL", "city": "Vancouver"}, {"id": 67, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-27T22:00:00Z", "home": "PAN", "away": "ENG", "city": "Nova Jersey"}, {"id": 68, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-27T22:00:00Z", "home": "CRO", "away": "GHA", "city": "Filadélfia"}, {"id": 69, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-28T02:30:00Z", "home": "COL", "away": "POR", "city": "Miami"}, {"id": 70, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-28T02:30:00Z", "home": "TBD", "away": "UZB", "city": "Atlanta"}, {"id": 71, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-28T04:00:00Z", "home": "ALG", "away": "AUT", "city": "Kansas City"}, {"id": 72, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-28T04:00:00Z", "home": "JOR", "away": "ARG", "city": "Dallas"}, {"id": 73, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-28T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Los Angeles"}, {"id": 74, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-29T19:00:00Z", "home": "TBD", "away": "TBD", "city": "Houston"}, {"id": 75, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-29T22:30:00Z", "home": "TBD", "away": "TBD", "city": "Boston"}, {"id": 76, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-30T03:00:00Z", "home": "TBD", "away": "TBD", "city": "Monterrey"}, {"id": 77, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-30T19:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 78, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-30T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Nova Jersey"}, {"id": 79, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-01T03:00:00Z", "home": "TBD", "away": "TBD", "city": "Cidade do México"}, {"id": 80, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-01T17:00:00Z", "home": "TBD", "away": "TBD", "city": "Atlanta"}, {"id": 81, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-02T00:00:00Z", "home": "TBD", "away": "TBD", "city": "Seattle"}, {"id": 82, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-02T04:00:00Z", "home": "TBD", "away": "TBD", "city": "São Francisco"}, {"id": 83, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-02T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Los Angeles"}, {"id": 84, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T00:00:00Z", "home": "TBD", "away": "TBD", "city": "Toronto"}, {"id": 85, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T07:00:00Z", "home": "TBD", "away": "TBD", "city": "Vancouver"}, {"id": 86, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 87, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Miami"}, {"id": 88, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-04T03:30:00Z", "home": "TBD", "away": "TBD", "city": "Kansas City"}, {"id": 89, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-04T19:00:00Z", "home": "TBD", "away": "TBD", "city": "Houston"}, {"id": 90, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-04T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Filadélfia"}, {"id": 91, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-05T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Nova Jersey"}, {"id": 92, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-06T02:00:00Z", "home": "TBD", "away": "TBD", "city": "Cidade do México"}, {"id": 93, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-06T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 94, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-07T04:00:00Z", "home": "TBD", "away": "TBD", "city": "Seattle"}, {"id": 95, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-07T17:00:00Z", "home": "TBD", "away": "TBD", "city": "Atlanta"}, {"id": 96, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-08T00:00:00Z", "home": "TBD", "away": "TBD", "city": "Vancouver"}, {"id": 97, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-09T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Boston"}, {"id": 98, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-10T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Los Angeles"}, {"id": 99, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-11T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Miami"}, {"id": 100, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-12T03:00:00Z", "home": "TBD", "away": "TBD", "city": "Kansas City"}, {"id": 101, "stage": "Semifinal", "stageKey": "SF", "group": "", "utc": "2026-07-14T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 102, "stage": "Semifinal", "stageKey": "SF", "group": "", "utc": "2026-07-15T20:00:00Z", "home": "TBD", "away": "TBD", "city": "Atlanta"}, {"id": 103, "stage": "Disputa de 3º lugar", "stageKey": "BR", "group": "", "utc": "2026-07-18T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Miami"}, {"id": 104, "stage": "Final", "stageKey": "FN", "group": "", "utc": "2026-07-19T20:00:00Z", "home": "TBD", "away": "TBD", "city": "Nova Jersey"}]};
+const DB = {"teams": {"MEX": {"name": "México", "flag": "🇲🇽"}, "RSA": {"name": "África do Sul", "flag": "🇿🇦"}, "KOR": {"name": "Coreia do Sul", "flag": "🇰🇷"}, "CAN": {"name": "Canadá", "flag": "🇨🇦"}, "USA": {"name": "Estados Unidos", "flag": "🇺🇸"}, "PAR": {"name": "Paraguai", "flag": "🇵🇾"}, "QAT": {"name": "Catar", "flag": "🇶🇦"}, "SUI": {"name": "Suíça", "flag": "🇨🇭"}, "BRA": {"name": "Brasil", "flag": "🇧🇷"}, "MAR": {"name": "Marrocos", "flag": "🇲🇦"}, "HAI": {"name": "Haiti", "flag": "🇭🇹"}, "SCO": {"name": "Escócia", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"}, "AUS": {"name": "Austrália", "flag": "🇦🇺"}, "GER": {"name": "Alemanha", "flag": "🇩🇪"}, "CUW": {"name": "Curaçao", "flag": "🇨🇼"}, "NED": {"name": "Holanda", "flag": "🇳🇱"}, "JPN": {"name": "Japão", "flag": "🇯🇵"}, "CIV": {"name": "Costa do Marfim", "flag": "🇨🇮"}, "ECU": {"name": "Equador", "flag": "🇪🇨"}, "TUN": {"name": "Tunísia", "flag": "🇹🇳"}, "ESP": {"name": "Espanha", "flag": "🇪🇸"}, "CPV": {"name": "Cabo Verde", "flag": "🇨🇻"}, "BEL": {"name": "Bélgica", "flag": "🇧🇪"}, "EGY": {"name": "Egito", "flag": "🇪🇬"}, "KSA": {"name": "Arábia Saudita", "flag": "🇸🇦"}, "URU": {"name": "Uruguai", "flag": "🇺🇾"}, "IRN": {"name": "Irã", "flag": "🇮🇷"}, "NZL": {"name": "Nova Zelândia", "flag": "🇳🇿"}, "FRA": {"name": "França", "flag": "🇫🇷"}, "SEN": {"name": "Senegal", "flag": "🇸🇳"}, "NOR": {"name": "Noruega", "flag": "🇳🇴"}, "ARG": {"name": "Argentina", "flag": "🇦🇷"}, "ALG": {"name": "Argélia", "flag": "🇩🇿"}, "AUT": {"name": "Áustria", "flag": "🇦🇹"}, "JOR": {"name": "Jordânia", "flag": "🇯🇴"}, "POR": {"name": "Portugal", "flag": "🇵🇹"}, "ENG": {"name": "Inglaterra", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"}, "CRO": {"name": "Croácia", "flag": "🇭🇷"}, "GHA": {"name": "Gana", "flag": "🇬🇭"}, "PAN": {"name": "Panamá", "flag": "🇵🇦"}, "UZB": {"name": "Uzbequistão", "flag": "🇺🇿"}, "COL": {"name": "Colômbia", "flag": "🇨🇴"}, "CZE": {"name": "Tchéquia", "flag": "🇨🇿"}, "BIH": {"name": "Bósnia e Herzegovina", "flag": "🇧🇦"}, "TUR": {"name": "Turquia", "flag": "🇹🇷"}, "SWE": {"name": "Suécia", "flag": "🇸🇪"}, "IRQ": {"name": "Iraque", "flag": "🇮🇶"}, "COD": {"name": "RD Congo", "flag": "🇨🇩"}, "TBD": {"name": "A definir", "flag": "⚽"}}, "matches": [{"id": 1, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-11T21:00:00Z", "home": "MEX", "away": "RSA", "city": "Cidade do México"}, {"id": 2, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-12T04:00:00Z", "home": "KOR", "away": "CZE", "city": "Guadalajara"}, {"id": 3, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-12T20:00:00Z", "home": "CAN", "away": "BIH", "city": "Toronto"}, {"id": 4, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-13T05:00:00Z", "home": "USA", "away": "PAR", "city": "Los Angeles"}, {"id": 5, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-13T23:00:00Z", "home": "QAT", "away": "SUI", "city": "São Francisco"}, {"id": 6, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-13T23:00:00Z", "home": "BRA", "away": "MAR", "city": "Nova Jersey"}, {"id": 7, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-14T02:00:00Z", "home": "HAI", "away": "SCO", "city": "Boston"}, {"id": 8, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-14T08:00:00Z", "home": "AUS", "away": "TUR", "city": "Vancouver"}, {"id": 9, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-14T19:00:00Z", "home": "GER", "away": "CUW", "city": "Houston"}, {"id": 10, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-14T22:00:00Z", "home": "NED", "away": "JPN", "city": "Dallas"}, {"id": 11, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-15T00:00:00Z", "home": "CIV", "away": "ECU", "city": "Filadélfia"}, {"id": 12, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-15T04:00:00Z", "home": "SWE", "away": "TUN", "city": "Monterrey"}, {"id": 13, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-15T17:00:00Z", "home": "ESP", "away": "CPV", "city": "Atlanta"}, {"id": 14, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-15T23:00:00Z", "home": "BEL", "away": "EGY", "city": "Vancouver"}, {"id": 15, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-15T23:00:00Z", "home": "KSA", "away": "URU", "city": "Miami"}, {"id": 16, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-16T05:00:00Z", "home": "IRN", "away": "NZL", "city": "Los Angeles"}, {"id": 17, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-16T20:00:00Z", "home": "FRA", "away": "SEN", "city": "Nova Jersey"}, {"id": 18, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-16T23:00:00Z", "home": "IRQ", "away": "NOR", "city": "Boston"}, {"id": 19, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-17T03:00:00Z", "home": "ARG", "away": "ALG", "city": "Kansas City"}, {"id": 20, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-17T08:00:00Z", "home": "AUT", "away": "JOR", "city": "São Francisco"}, {"id": 21, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-17T19:00:00Z", "home": "POR", "away": "COD", "city": "Houston"}, {"id": 22, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-17T22:00:00Z", "home": "ENG", "away": "CRO", "city": "Dallas"}, {"id": 23, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-18T00:00:00Z", "home": "GHA", "away": "PAN", "city": "Toronto"}, {"id": 24, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-18T04:00:00Z", "home": "UZB", "away": "COL", "city": "Cidade do México"}, {"id": 25, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-18T17:00:00Z", "home": "CZE", "away": "RSA", "city": "Atlanta"}, {"id": 26, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-18T23:00:00Z", "home": "SUI", "away": "BIH", "city": "Los Angeles"}, {"id": 27, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-19T02:00:00Z", "home": "CAN", "away": "QAT", "city": "Vancouver"}, {"id": 28, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-19T03:00:00Z", "home": "MEX", "away": "KOR", "city": "Guadalajara"}, {"id": 29, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-19T23:00:00Z", "home": "USA", "away": "AUS", "city": "Seattle"}, {"id": 30, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-19T23:00:00Z", "home": "SCO", "away": "MAR", "city": "Boston"}, {"id": 31, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-20T02:00:00Z", "home": "BRA", "away": "HAI", "city": "Filadélfia"}, {"id": 32, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-20T08:00:00Z", "home": "TUR", "away": "PAR", "city": "São Francisco"}, {"id": 33, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-20T19:00:00Z", "home": "NED", "away": "SWE", "city": "Houston"}, {"id": 34, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-20T21:00:00Z", "home": "GER", "away": "CIV", "city": "Toronto"}, {"id": 35, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-21T04:00:00Z", "home": "ECU", "away": "CUW", "city": "Kansas City"}, {"id": 36, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-21T06:00:00Z", "home": "TUN", "away": "JPN", "city": "Monterrey"}, {"id": 37, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-21T17:00:00Z", "home": "ESP", "away": "KSA", "city": "Atlanta"}, {"id": 38, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-21T23:00:00Z", "home": "BEL", "away": "IRN", "city": "Los Angeles"}, {"id": 39, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-21T23:00:00Z", "home": "URU", "away": "CPV", "city": "Miami"}, {"id": 40, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-22T05:00:00Z", "home": "NZL", "away": "EGY", "city": "Vancouver"}, {"id": 41, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-22T19:00:00Z", "home": "ARG", "away": "AUT", "city": "Dallas"}, {"id": 42, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-22T22:00:00Z", "home": "FRA", "away": "IRQ", "city": "Filadélfia"}, {"id": 43, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-23T01:00:00Z", "home": "NOR", "away": "SEN", "city": "Nova Jersey"}, {"id": 44, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-23T07:00:00Z", "home": "JOR", "away": "ALG", "city": "São Francisco"}, {"id": 45, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-23T19:00:00Z", "home": "POR", "away": "UZB", "city": "Houston"}, {"id": 46, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-23T21:00:00Z", "home": "ENG", "away": "GHA", "city": "Boston"}, {"id": 47, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-24T00:00:00Z", "home": "PAN", "away": "CRO", "city": "Toronto"}, {"id": 48, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-24T04:00:00Z", "home": "COL", "away": "COD", "city": "Guadalajara"}, {"id": 49, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-24T23:00:00Z", "home": "SUI", "away": "CAN", "city": "Vancouver"}, {"id": 50, "stage": "Fase de grupos", "stageKey": "GRP", "group": "B", "utc": "2026-06-24T23:00:00Z", "home": "BIH", "away": "QAT", "city": "Seattle"}, {"id": 51, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-24T23:00:00Z", "home": "SCO", "away": "BRA", "city": "Miami"}, {"id": 52, "stage": "Fase de grupos", "stageKey": "GRP", "group": "C", "utc": "2026-06-24T23:00:00Z", "home": "MAR", "away": "HAI", "city": "Atlanta"}, {"id": 53, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-25T03:00:00Z", "home": "CZE", "away": "MEX", "city": "Cidade do México"}, {"id": 54, "stage": "Fase de grupos", "stageKey": "GRP", "group": "A", "utc": "2026-06-25T03:00:00Z", "home": "RSA", "away": "KOR", "city": "Monterrey"}, {"id": 55, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-25T21:00:00Z", "home": "ECU", "away": "GER", "city": "Nova Jersey"}, {"id": 56, "stage": "Fase de grupos", "stageKey": "GRP", "group": "E", "utc": "2026-06-25T21:00:00Z", "home": "CUW", "away": "CIV", "city": "Filadélfia"}, {"id": 57, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-26T01:00:00Z", "home": "JPN", "away": "SWE", "city": "Dallas"}, {"id": 58, "stage": "Fase de grupos", "stageKey": "GRP", "group": "F", "utc": "2026-06-26T01:00:00Z", "home": "TUN", "away": "NED", "city": "Kansas City"}, {"id": 59, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-26T06:00:00Z", "home": "TUR", "away": "USA", "city": "Los Angeles"}, {"id": 60, "stage": "Fase de grupos", "stageKey": "GRP", "group": "D", "utc": "2026-06-26T06:00:00Z", "home": "PAR", "away": "AUS", "city": "São Francisco"}, {"id": 61, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-26T20:00:00Z", "home": "NOR", "away": "FRA", "city": "Boston"}, {"id": 62, "stage": "Fase de grupos", "stageKey": "GRP", "group": "I", "utc": "2026-06-26T20:00:00Z", "home": "SEN", "away": "IRQ", "city": "Toronto"}, {"id": 63, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-27T02:00:00Z", "home": "CPV", "away": "KSA", "city": "Houston"}, {"id": 64, "stage": "Fase de grupos", "stageKey": "GRP", "group": "H", "utc": "2026-06-27T02:00:00Z", "home": "URU", "away": "ESP", "city": "Guadalajara"}, {"id": 65, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-27T07:00:00Z", "home": "EGY", "away": "IRN", "city": "Seattle"}, {"id": 66, "stage": "Fase de grupos", "stageKey": "GRP", "group": "G", "utc": "2026-06-27T07:00:00Z", "home": "NZL", "away": "BEL", "city": "Vancouver"}, {"id": 67, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-27T22:00:00Z", "home": "PAN", "away": "ENG", "city": "Nova Jersey"}, {"id": 68, "stage": "Fase de grupos", "stageKey": "GRP", "group": "L", "utc": "2026-06-27T22:00:00Z", "home": "CRO", "away": "GHA", "city": "Filadélfia"}, {"id": 69, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-28T02:30:00Z", "home": "COL", "away": "POR", "city": "Miami"}, {"id": 70, "stage": "Fase de grupos", "stageKey": "GRP", "group": "K", "utc": "2026-06-28T02:30:00Z", "home": "COD", "away": "UZB", "city": "Atlanta"}, {"id": 71, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-28T04:00:00Z", "home": "ALG", "away": "AUT", "city": "Kansas City"}, {"id": 72, "stage": "Fase de grupos", "stageKey": "GRP", "group": "J", "utc": "2026-06-28T04:00:00Z", "home": "JOR", "away": "ARG", "city": "Dallas"}, {"id": 73, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-28T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Los Angeles"}, {"id": 74, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-29T19:00:00Z", "home": "TBD", "away": "TBD", "city": "Houston"}, {"id": 75, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-29T22:30:00Z", "home": "TBD", "away": "TBD", "city": "Boston"}, {"id": 76, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-30T03:00:00Z", "home": "TBD", "away": "TBD", "city": "Monterrey"}, {"id": 77, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-30T19:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 78, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-06-30T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Nova Jersey"}, {"id": 79, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-01T03:00:00Z", "home": "TBD", "away": "TBD", "city": "Cidade do México"}, {"id": 80, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-01T17:00:00Z", "home": "TBD", "away": "TBD", "city": "Atlanta"}, {"id": 81, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-02T00:00:00Z", "home": "TBD", "away": "TBD", "city": "Seattle"}, {"id": 82, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-02T04:00:00Z", "home": "TBD", "away": "TBD", "city": "São Francisco"}, {"id": 83, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-02T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Los Angeles"}, {"id": 84, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T00:00:00Z", "home": "TBD", "away": "TBD", "city": "Toronto"}, {"id": 85, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T07:00:00Z", "home": "TBD", "away": "TBD", "city": "Vancouver"}, {"id": 86, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 87, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-03T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Miami"}, {"id": 88, "stage": "Rodada de 32", "stageKey": "R32", "group": "", "utc": "2026-07-04T03:30:00Z", "home": "TBD", "away": "TBD", "city": "Kansas City"}, {"id": 89, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-04T19:00:00Z", "home": "TBD", "away": "TBD", "city": "Houston"}, {"id": 90, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-04T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Filadélfia"}, {"id": 91, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-05T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Nova Jersey"}, {"id": 92, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-06T02:00:00Z", "home": "TBD", "away": "TBD", "city": "Cidade do México"}, {"id": 93, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-06T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 94, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-07T04:00:00Z", "home": "TBD", "away": "TBD", "city": "Seattle"}, {"id": 95, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-07T17:00:00Z", "home": "TBD", "away": "TBD", "city": "Atlanta"}, {"id": 96, "stage": "Oitavas de final", "stageKey": "R16", "group": "", "utc": "2026-07-08T00:00:00Z", "home": "TBD", "away": "TBD", "city": "Vancouver"}, {"id": 97, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-09T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Boston"}, {"id": 98, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-10T23:00:00Z", "home": "TBD", "away": "TBD", "city": "Los Angeles"}, {"id": 99, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-11T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Miami"}, {"id": 100, "stage": "Quartas de final", "stageKey": "QF", "group": "", "utc": "2026-07-12T03:00:00Z", "home": "TBD", "away": "TBD", "city": "Kansas City"}, {"id": 101, "stage": "Semifinal", "stageKey": "SF", "group": "", "utc": "2026-07-14T21:00:00Z", "home": "TBD", "away": "TBD", "city": "Dallas"}, {"id": 102, "stage": "Semifinal", "stageKey": "SF", "group": "", "utc": "2026-07-15T20:00:00Z", "home": "TBD", "away": "TBD", "city": "Atlanta"}, {"id": 103, "stage": "Disputa de 3º lugar", "stageKey": "BR", "group": "", "utc": "2026-07-18T22:00:00Z", "home": "TBD", "away": "TBD", "city": "Miami"}, {"id": 104, "stage": "Final", "stageKey": "FN", "group": "", "utc": "2026-07-19T20:00:00Z", "home": "TBD", "away": "TBD", "city": "Nova Jersey"}]};
 const KEY = "copa2026_margarido";
-const KO = {R32:1,R16:1,QF:1,SF:1,BR:1,FN:1};
 let store = {};
 try{ store = JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ store={}; }
+
+const NF={};
+function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").trim();}
+Object.values(DB.teams).forEach(t=>{ if(t.name!=="A definir") NF[norm(t.name)]=t.flag; });
+const ALIAS={"eua":"🇺🇸","estados unidos":"🇺🇸","usa":"🇺🇸","inglaterra":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","escocia":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","coreia":"🇰🇷","tchequia":"🇨🇿","republica tcheca":"🇨🇿","bosnia":"🇧🇦","turquia":"🇹🇷","suecia":"🇸🇪","iraque":"🇮🇶","congo":"🇨🇩","rd congo":"🇨🇩"};
+function flagFor(name){ if(!name) return "⚽"; const k=norm(name); return NF[k]||ALIAS[k]||"⚽"; }
 
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){} flash(); updateProgress(); }
 let flashT;
@@ -256,25 +259,27 @@ function flash(){ const f=document.getElementById("flash"); f.classList.add("sho
   clearTimeout(flashT); flashT=setTimeout(()=>f.classList.remove("show"),900); }
 
 function team(k){ return DB.teams[k] || {name:k,flag:"⚽"}; }
-function fmtDate(iso){
-  const d=new Date(iso);
-  return d.toLocaleDateString("pt-BR",{weekday:"long",day:"2-digit",month:"long",timeZone:"America/Sao_Paulo"});
-}
-function fmtHora(iso){
-  const d=new Date(iso);
-  return d.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"});
-}
-function dayKey(iso){
-  const d=new Date(iso);
-  return d.toLocaleDateString("en-CA",{timeZone:"America/Sao_Paulo"}); // YYYY-MM-DD
-}
+function fmtDate(iso){ return new Date(iso).toLocaleDateString("pt-BR",{weekday:"long",day:"2-digit",month:"long",timeZone:"America/Sao_Paulo"}); }
+function fmtHora(iso){ return new Date(iso).toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"}); }
+function dayKey(iso){ return new Date(iso).toLocaleDateString("en-CA",{timeZone:"America/Sao_Paulo"}); }
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function escapeHtml(t){return (t||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+function escapeAttr(t){return (t||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
 let filtro={busca:"",fase:"",quick:""};
 
-function isBra(m){ return m.home==="BRA"||m.away==="BRA"; }
-function matchText(m){
-  return (team(m.home).name+" "+team(m.away).name+" "+m.stage+" "+(m.group?"grupo "+m.group:"")+" "+m.city).toLowerCase();
+function isKO(m){ return m.stageKey!=="GRP"; }
+function isBra(m){
+  if(m.home==="BRA"||m.away==="BRA") return true;
+  const s=store[m.id];
+  if(s && (norm(s.th)==="brasil"||norm(s.ta)==="brasil")) return true;
+  return false;
 }
+function matchText(m){
+  const s=store[m.id]||{};
+  return (team(m.home).name+" "+team(m.away).name+" "+(s.th||"")+" "+(s.ta||"")+" "+m.stage+" "+(m.group?"grupo "+m.group:"")+" "+m.city).toLowerCase();
+}
+function hasScore(s){ return s && s.h!==undefined && s.h!=="" && s.a!==undefined && s.a!==""; }
 
 function render(){
   const lista=document.getElementById("lista");
@@ -287,7 +292,6 @@ function render(){
     return true;
   });
   if(!ms.length){ lista.innerHTML='<div class="empty"><div class="big">🔍</div><b>Nenhum jogo encontrado.</b><br>Tente outra busca ou filtro.</div>'; return; }
-
   let lastDay="";
   ms.forEach(m=>{
     const dk=dayKey(m.utc);
@@ -301,58 +305,77 @@ function render(){
     lista.lastChild.querySelector(".matches").appendChild(card(m));
   });
 }
-function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+
+function teamCell(m, side){
+  const cls = side==="h" ? "team h" : "team a";
+  if(!isKO(m)){
+    const t=team(side==="h"?m.home:m.away);
+    const nm='<span class="nm">'+t.name+'</span>';
+    const fl='<span class="fl">'+t.flag+'</span>';
+    return '<div class="'+cls+'">'+(side==="h"?nm+fl:fl+nm)+'</div>';
+  }
+  const s=store[m.id]||{};
+  const val = side==="h" ? (s.th||"") : (s.ta||"");
+  const fl='<span class="fl">'+flagFor(val)+'</span>';
+  const inp='<input class="teaminp" type="text" data-id="'+m.id+'" data-f="'+(side==="h"?"th":"ta")+'" value="'+escapeAttr(val)+'" placeholder="Quem passou?">';
+  return '<div class="'+cls+'">'+(side==="h"?inp+fl:fl+inp)+'</div>';
+}
 
 function card(m){
   const s=store[m.id]||{};
-  const done=(s.h!==undefined&&s.h!==""&&s.a!==undefined&&s.a!=="");
+  const done=hasScore(s);
   const el=document.createElement("div");
   el.className="match"+(isBra(m)?" bra":"")+(done?" done":"");
-  const h=team(m.home), a=team(m.away);
-  const tag = m.stageKey==="GRP"
-    ? '<span class="tag">Grupo '+m.group+'</span>'
-    : '<span class="tag ko">'+m.stage+'</span>';
+  const tag = m.stageKey==="GRP" ? '<span class="tag">Grupo '+m.group+'</span>' : '<span class="tag ko">'+m.stage+'</span>';
   el.innerHTML=
     '<div class="meta"><div class="hora">'+fmtHora(m.utc)+'</div><div>📍 '+m.city+'</div>'+tag+'</div>'+
     '<div class="teams">'+
-      '<div class="team h"><span class="nm">'+h.name+'</span><span class="fl">'+h.flag+'</span></div>'+
+      teamCell(m,"h")+
       '<div class="scorebox">'+
-        '<input type="number" min="0" max="99" inputmode="numeric" data-id="'+m.id+'" data-f="h" value="'+(s.h??"")+'" aria-label="gols '+h.name+'">'+
+        '<input type="number" min="0" max="99" inputmode="numeric" data-id="'+m.id+'" data-f="h" value="'+(s.h??"")+'" aria-label="gols casa">'+
         '<span class="x">×</span>'+
-        '<input type="number" min="0" max="99" inputmode="numeric" data-id="'+m.id+'" data-f="a" value="'+(s.a??"")+'" aria-label="gols '+a.name+'">'+
+        '<input type="number" min="0" max="99" inputmode="numeric" data-id="'+m.id+'" data-f="a" value="'+(s.a??"")+'" aria-label="gols visitante">'+
       '</div>'+
-      '<div class="team a"><span class="fl">'+a.flag+'</span><span class="nm">'+a.name+'</span></div>'+
+      teamCell(m,"a")+
     '</div>'+
     '<div class="notecell">'+
-      '<textarea placeholder="Anotações do Seu Margarido..." data-id="'+m.id+'" data-f="n">'+(s.n?escapeHtml(s.n):"")+'</textarea>'+
+      '<textarea placeholder="Anotações do Seu Margarido..." data-id="'+m.id+'" data-f="n">'+escapeHtml(s.n)+'</textarea>'+
     '</div>';
   return el;
 }
-function escapeHtml(t){return t.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+
+function isEmptyEntry(s){
+  return (s.h===undefined||s.h==="")&&(s.a===undefined||s.a==="")&&!s.n&&!s.th&&!s.ta;
+}
 
 document.getElementById("lista").addEventListener("input",e=>{
   const t=e.target; const id=t.dataset.id; if(!id) return;
   const f=t.dataset.f;
   store[id]=store[id]||{};
   if(f==="n"){ store[id].n=t.value; }
+  else if(f==="th"||f==="ta"){
+    store[id][f]=t.value;
+    const span=t.closest(".team").querySelector(".fl");
+    if(span) span.textContent=flagFor(t.value);
+    const cardEl=t.closest(".match");
+    if(cardEl) cardEl.classList.toggle("bra", isBra(DB.matches.find(x=>x.id==id)));
+  }
   else{ store[id][f]= t.value===""?"":Math.max(0,Math.min(99,parseInt(t.value)||0)); }
-  if(store[id].h===""&&store[id].a===""&&!store[id].n) delete store[id];
+  if(isEmptyEntry(store[id])) delete store[id];
   save();
   const cardEl=t.closest(".match");
-  const s=store[id]||{};
-  cardEl.classList.toggle("done", s.h!==undefined&&s.h!==""&&s.a!==undefined&&s.a!=="");
+  if(cardEl) cardEl.classList.toggle("done", hasScore(store[id]));
 });
 
 function updateProgress(){
   let done=0;
-  DB.matches.forEach(m=>{const s=store[m.id]; if(s&&s.h!==undefined&&s.h!==""&&s.a!==undefined&&s.a!=="")done++;});
+  DB.matches.forEach(m=>{ if(hasScore(store[m.id])) done++; });
   const tot=DB.matches.length;
   document.getElementById("fill").style.width=(done/tot*100)+"%";
   document.getElementById("lblProg").textContent=done+" de "+tot;
   document.getElementById("chipFeitos").textContent=done;
 }
 
-// quick chips
 function buildQuick(){
   const q=document.getElementById("quick");
   const groups=[...new Set(DB.matches.filter(m=>m.group).map(m=>m.group))].sort();
@@ -371,7 +394,6 @@ function buildQuick(){
 
 document.getElementById("busca").addEventListener("input",e=>{filtro.busca=e.target.value.trim().toLowerCase(); render();});
 document.getElementById("filtroFase").addEventListener("change",e=>{filtro.fase=e.target.value; render();});
-
 document.getElementById("btnReset").addEventListener("click",()=>{
   if(confirm("Apagar TODOS os placares e anotações do Seu Margarido? Essa ação não pode ser desfeita.")){
     store={}; localStorage.removeItem(KEY); render(); updateProgress();
